@@ -28,9 +28,15 @@ build:
           echo "npm version $(npm -v) running"
  
 deploy:
+  box: casey232/cf-bluemix-ci:latest
   steps:
     - internal/docker-push:
         registry: https://registry.eu-gb.bluemix.net/v2
         repository: registry.eu-gb.bluemix.net/aie_london/crtest
         username: bearer
         password: $IBM_TOKEN
+
+    - script:
+        name: test
+        code: |
+          cf ic images
