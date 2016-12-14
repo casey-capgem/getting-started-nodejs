@@ -32,6 +32,5 @@ deploy:
     - internal/docker-push:
         registry: https://registry.eu-gb.bluemix.net/v2
         repository: registry.eu-gb.bluemix.net/aie_london/crtest
-        tags: registry.eu-gb.bluemix.net/aie_london/crtest
         username: bearer
         password: $IBM_TOKEN
